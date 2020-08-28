@@ -1,7 +1,23 @@
 type Anime {
-  name: String!
+  title: String
+  link: String
+  image: String
+  label: String!
+  type: String
+  info: AnimeInfo
+}
+
+type AnimeInfo {
+  rate: String
+  votes: String
+  genres: [String!]!
+  label: String!
+  description: String
+  episodes: [EpisodeSmall!]!
+  title: String
 }
 
 extend type Query {
   animes: [Anime!]!
+  animeInfo(title: String!): AnimeInfo
 }

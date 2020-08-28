@@ -1,0 +1,20 @@
+type Episode {
+  title: String
+  label: String!
+  episode: String
+  index: Int
+}
+
+type EpisodeSmall {
+  id: Int
+  index: Int!
+}
+
+type EpisodeSource {
+  videos: [String!]!
+  downloads: String
+}
+
+extend type Query {
+  episodeSources(index: Int!, title: String!): EpisodeSource
+}

@@ -1,8 +1,12 @@
 import * as animeController from '../../controllers/anime'
 
 const resolvers = {
+  Anime: {
+    info: ({ title }) => animeController.getAnimeInfo('', { title })
+  },
   Query: {
-    animes: animeController.getRecentAnimes
+    animes: animeController.getRecentAnimes,
+    animeInfo: animeController.getAnimeInfo
   }
 }
 
