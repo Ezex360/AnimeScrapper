@@ -1,0 +1,7 @@
+type Anime {
+  name: String!
+}
+
+extend type Query {
+  animes: [Anime!]!
+}
